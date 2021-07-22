@@ -16,3 +16,7 @@ function fish_prompt -d "Write out the prompt"
 
     printf ' 🔩 %s%s%s > ' \ (set_color $fish_color_cwd) (prompt_pwd) (set_color $fish_color_cwd)
 end
+
+# Set volta
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
