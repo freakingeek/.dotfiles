@@ -1,0 +1,7 @@
+# Gedit
+gedit-metadata.xml
+
+# Xmonad
+xmonad.*
+!xmonad.hs
+xmonad-x86_64-linux
