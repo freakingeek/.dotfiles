@@ -5,3 +5,6 @@ gedit-metadata.xml
 xmonad.*
 !xmonad.hs
 xmonad-x86_64-linux
+
+# Qtile
+__pycache__
