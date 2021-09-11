@@ -1,4 +1,5 @@
-#! /usr/bin/env bash
+#!/bin/sh
 
-picom &
-feh --bg-fill ~/.config/background &
+# feh --bg-fill ~/.config/background &
+# gnome-keyring-daemon --start &
+# picom &

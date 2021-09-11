@@ -84,6 +84,9 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
+    
+    # Brightness
+    # Key([], "X86MonBrightnessUp", lazy.spawn("brightnessctl set +8% --quiet"), desc="Update brightness x + x%"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -109,7 +112,7 @@ columns_layout_options = {
         "margin": 4,
         "border_width": 1,
         "border_focus": '#3b4252',
-        "border_normal": 'ffffff',
+        "border_normal": '#3b4252',
 }
 
 
@@ -139,23 +142,22 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.WindowName(),
+                widget.Clock(format='%a %d %I:%M %p'),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
-                widget.QuickExit(),
+                # widget.QuickExit(),
+                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
             ],
             24,
         ),
@@ -192,9 +194,9 @@ reconfigure_screens = True
 
 # Autostart
 @hook.subscribe.startup_once
-def start_once():
-    home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/autostart.sh'])
+def autostart():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.call([home])
 
 
 
