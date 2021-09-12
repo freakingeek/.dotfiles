@@ -33,12 +33,17 @@ from typing import List  # noqa: F401
 from libqtile import bar, layout, hook, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-# from libqtile.utils import guess_terminal
+
+# My Qtile Modules
+from modules.defaults import defaults
 
 mod = "mod4"
-terminal = "kitty"
 
 keys = [
+    # Applications
+    Key([defaults["mod"]], "Return", lazy.spawn(defaults["terminal"]), desc="Launch terminal"),
+    Key([defaults["mod"]], "r", lazy.spawn("rofi -show drun"), desc="Launch rofi menu"),
+    
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
@@ -74,7 +79,6 @@ keys = [
     # multiple stack panes
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack"),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -82,8 +86,8 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(),
-        desc="Spawn a command using a prompt widget"),
+    # Key([mod], "r", lazy.spawncmd(),
+    #     desc="Spawn a command using a prompt widget"),
     
     # Brightness
     # Key([], "X86MonBrightnessUp", lazy.spawn("brightnessctl set +8% --quiet"), desc="Update brightness x + x%"),
