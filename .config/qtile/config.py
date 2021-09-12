@@ -33,7 +33,7 @@ from typing import List  # noqa: F401
 from libqtile import bar, layout, hook, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
+# from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = "kitty"
@@ -143,12 +143,15 @@ extension_defaults = widget_defaults.copy()
 screens = [
     Screen(
         top=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
+            widgets = [
+                # widget.CurrentLayout(),
+                widget.GroupBox(padding=8, borderwidth=0),
                 widget.Prompt(),
-                widget.WindowName(),
+                # widget.WindowName(),
+                widget.Spacer(),
                 widget.Clock(format='%a %d %I:%M %p'),
+                widget.Spacer(),
+                widget.Battery(format='Battery: {percent: 2.0%}'),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
@@ -159,7 +162,11 @@ screens = [
                 # widget.QuickExit(),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
             ],
-            24,
+
+            size=32,
+	        margin=0,
+	        opacity=0.96,
+            background="#1d2021",
         ),
     ),
 ]
