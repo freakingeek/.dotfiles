@@ -1,5 +1,6 @@
 #!/bin/sh
 
-# feh --bg-fill ~/.config/background &
-# gnome-keyring-daemon --start &
-# picom &
+picom &
+dunst &
+feh --bg-fill --randomize ~/.dotfiles/wallpapers &
+gnome-keyring-daemon --start --components=pkcs11,secrets,ssh &
