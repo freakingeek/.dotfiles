@@ -87,6 +87,11 @@ keys = [
     
     # Brightness
     # Key([], "X86MonBrightnessUp", lazy.spawn("brightnessctl set +8% --quiet"), desc="Update brightness x + x%"),
+
+    # Audio controllers
+    Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute 0 toggle"), desc="Toggle"),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +4%"), desc="Update volume x + x%"),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -4%"), desc="Update volume x - x%"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -109,7 +114,7 @@ for i in groups:
 
 # Layout Configs
 columns_layout_options = {
-        "margin": 4,
+        # "margin": 4,
         "border_width": 1,
         "border_focus": '#3b4252',
         "border_normal": '#3b4252',
