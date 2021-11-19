@@ -3,5 +3,5 @@
 defaults = {
   "mod": "mod4",
   "terminal": "kitty",
-  "web_browser": "firefox"
+  "web_browser": "chromium"
 }
