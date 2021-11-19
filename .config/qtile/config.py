@@ -105,6 +105,9 @@ keys = [
     Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute 0 toggle"), desc="Toggle"),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +4%"), desc="Update volume x + x%"),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -4%"), desc="Update volume x - x%"),
+
+    # Screen Locker
+    Key([defaults["mod"]], "l", lazy.spawn("light-locker-command -l"))
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -122,9 +125,9 @@ for i in groups:
 # Layout Configs
 columns_layout_options = {
         "border_width": 2,
-        "margin": [8, 4, 8, 4],
-        "border_focus": '#ebdbb2',
-        "border_normal": '#3c3836',
+        "margin": [8, 4, 4, 4],
+        "border_focus": '#3d59a1',
+        "border_normal": '#101014',
 }
 
 layouts = [
@@ -155,9 +158,9 @@ screens = [
     Screen(
         top=bar.Bar(
             widgets = [
-                widget.GroupBox(active="#d5c4a1", inactive="#504945", padding=8, borderwidth=0),
+                widget.GroupBox(padding=8, borderwidth=0),
                 widget.Spacer(),
-                widget.Clock(font="sans Bold", format='%a %d %H:%M', foreground = "#d5c4a1"),
+                widget.Clock(font="sans Bold", format='%a %d %H:%M', foreground = "#a9b1d6"),
                 widget.Spacer(),
                 # widget.Battery(format='Battery: {percent: 2.0%}'),
                 # widget.Chord(
@@ -168,14 +171,14 @@ screens = [
                 # ),
                 widget.Systray(padding = 4, icon_size = 14),
                 widget.Spacer(length = 8),
-                widget.Image(filename="~/.config/qtile/icons/power.svg", margin=6, mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('rofi -show drun')}),
+                widget.Image(filename="~/.config/qtile/icons/power.svg", margin=6, mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('~/.config/rofi/bin/launcher_alone')}),
                 widget.Spacer(length = 4),
             ],
 
             size=26,
-	    margin=0,
-            foreground="#d79921",
-            background="#1d202180",
+	        margin=0,
+            foreground="#a9b1d6",
+            background="#1a1b26",
         ),
     ),
 ]
