@@ -1,8 +1,8 @@
 configuration {
-/* modi: "window,run,ssh";*/
-width: 32;
-lines: 8;
-columns: 1;
+modi: "window,drun,run,ssh";
+/* width: 0;*/
+/*  lines: 3;*/
+/*  columns: 3;*/
 font: "Source Code Pro 14";
 /*	bw: 1;*/
 /*	location: 0;*/
@@ -23,7 +23,7 @@ show-icons: true;
 /*	drun-match-fields: "name,generic,exec,categories,keywords";*/
 /*	drun-categories: ;*/
 /*	drun-show-actions: false;*/
-/*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
+drun-display-format: "{name}";
 /*	drun-url-launcher: "xdg-open";*/
 /*	disable-history: false;*/
 /*	ignored-prefixes: "";*/
@@ -73,7 +73,7 @@ hide-scrollbar: true;
 /*	display-windowcd: ;*/
 /*	display-run: ;*/
 /*	display-ssh: ;*/
-/*	display-drun: ;*/
+display-drun: "Applications";
 /*	display-combi: ;*/
 /*	display-keys: ;*/
 /*	display-file-browser: ;*/
@@ -150,3 +150,6 @@ hide-scrollbar: true;
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
+
+
+@theme "~/.config/rofi/theme.rasi"

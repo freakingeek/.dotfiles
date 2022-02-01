@@ -1,0 +1,75 @@
+* {
+  color: #d9e0ee;
+  background-color: transparent;
+}
+
+mainbox {
+  children: [ inputbar, listview ];
+}
+
+window {
+  width: 100%;
+  height: 100%;
+  padding: 8%;
+  transparency: "real";
+  background-color: rgba(22, 19, 32, 0.48);
+}
+
+entry {
+  padding: 0 0.5%;
+  /* font: "Hack 12";
+  placeholder-color: @foreground;
+  placeholder: "Search"; */
+  blink: true;
+}
+
+inputbar {
+  padding: 16px 0;
+}
+
+prompt {
+  enabled: true;
+}
+
+listview {
+  columns: 5;
+  layout: vertical;
+  margin: 128px 0 0 0;
+}
+
+element {
+  padding: 16px 0;
+  orientation: vertical;
+  margin: 16px 0 16px 16px;
+}
+
+/* element normal.urgent, element alternate.urgent {
+    background-color: @red;
+} */
+
+element normal.active, element alternate.active {
+    background-color: red;
+    color: red;
+}
+
+element-text {
+  color: inherit;
+  font: "Hack 10";
+  margin: 16px 0 0 0;
+  horizontal-align: 0.5;
+}
+
+element-icon {
+  size: 56px;
+}
+
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+#textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @normal-foreground;
+}
