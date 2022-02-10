@@ -1,3 +1,5 @@
+#! /usr/bin/bash
+
 DOTFILES_PATH=~/.dotfiles
 
 configs=(fontconfig fish)
