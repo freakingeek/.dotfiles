@@ -10,5 +10,5 @@ for config in ${configs[@]}; do
 done
 
 for local in ${locals[@]}; do
-  ln -sf $DOTFILES_PATH/.local/$local ~/.local
+  ln -sf $DOTFILES_PATH/.local/share/$local ~/.local/share/
 done
