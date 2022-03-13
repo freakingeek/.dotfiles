@@ -14,7 +14,7 @@ function fish_prompt -d "Write out the prompt"
     # This shows up as USER@HOST /home/user/ >, with the directory colored
     # $USER and $hostname are set by fish
 
-    printf ' 🔩 %s%s%s > ' \ (set_color $fish_color_cwd) (prompt_pwd) (set_color $fish_color_cwd)
+    printf ' %s%s%s > ' \ (set_color $fish_color_cwd) (prompt_pwd) (set_color $fish_color_cwd)
 end
 
 # Set volta
