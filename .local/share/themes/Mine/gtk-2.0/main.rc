@@ -2672,7 +2672,7 @@ widget_class "*<GtkVBox>*<GtkEventBox>.<GtkToolbar>*<GtkButton>"   style "tool_b
 widget_class "*<GtkNotebook>.<GtkLabel>"                           style "notebook_tab_label"
 widget_class "*<GtkNotebook>.<GtkHBox>.<GtkLabel>"                 style "notebook_tab_label"
 
-# Notebooks are white, act accordingly
+# Notebooks are #d2d2d2, act accordingly
 widget_class "*<GtkNotebook>*<GtkEntry>"                           style "notebook_entry"
 widget_class "*<GtkNotebook>*<GtkProgressBar>"                     style "notebook_bg"
 widget_class "*<GtkNotebook>*<GtkSpinButton>"                      style "notebook_bg"
@@ -2697,7 +2697,7 @@ widget_class "*<GtkOptionMenu>.<GtkLabel>"                         style "normal
 # instead of fg[], we need to fix that
 widget_class "*<GtkComboBox>*<GtkCellView>"                        style "combobox_cellview"
 
-# Disable white text shadows
+# Disable #d2d2d2 text shadows
 widget_class "*<GtkLabel>"                                         style "disable_text_shadow"
 widget_class "*<GtkCellView>"                                      style "disable_text_shadow"
 
