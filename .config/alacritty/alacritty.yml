@@ -14,14 +14,14 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
+  TERM: alacritty
 
 window:
   # Window dimensions (changes require restart)
@@ -46,8 +46,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-   x: 20
-   y: 20
+   x: 25
+   y: 25
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -67,7 +67,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.8
+  opacity: 0.9
 
   # Startup Mode (changes require restart)
   #
@@ -81,17 +81,17 @@ window:
   #startup_mode: Windowed
 
   # Window title
-  #title: Alacritty
+  title: Alacritty
 
   # Allow terminal applications to change Alacritty's window title.
   #dynamic_title: true
 
   # Window class (Linux/BSD only):
-  #class:
+  class:
     # Application instance name
-    #instance: Alacritty
+    instance: Alacritty
     # General application class
-    #general: Alacritty
+    general: Alacritty
 
   # GTK theme variant (Linux/BSD only)
   #
@@ -185,8 +185,8 @@ window:
 colors:
   # Default colors
   primary:
-   background: '#1f1f1f'
-   foreground: '#d2d2d2'
+    background: '#11171d'
+    foreground: '#a8a8a8'
 
     # Bright and dim foreground colors
     #
@@ -203,9 +203,9 @@ colors:
   #
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
-  #cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
+  cursor:
+   text: '#11171d'
+   cursor: '#a8a8a8'
 
   # Vi mode cursor colors
   #
@@ -274,25 +274,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#161320'
-    red:     '#f28fad'
-    green:   '#abe9B3'
-    yellow:  '#abe9b3'
-    blue:    '#96cdfb'
-    magenta: '#b294bb'
-    cyan:    '#8abeb7'
-    white:   '#d9e0ee'
+    black:   '#11171d'
+    red:     '#8c6983'
+    green:   '#828793'
+    yellow:  '#888293'
+    blue:    '#918795'
+    magenta: '#92a28e'
+    cyan:    '#7d8f8c'
+    white:   '#a8a8a8'
 
   # Bright colors
-  #bright:
-  #  black:   '#666666'
-  #  red:     '#d54e53'
-  #  green:   '#b9ca4a'
-  #  yellow:  '#e7c547'
-  #  blue:    '#7aa6da'
-  #  magenta: '#c397d8'
-  #  cyan:    '#70c0b1'
-  #  white:   '#eaeaea'
+  bright:
+    black:   '#11171d'
+    red:     '#9f849b'
+    green:   '#8f7777'
+    yellow:  '#9894ad'
+    blue:    '#a79cad'
+    magenta: '#b294bb'
+    cyan:    '#8d869e'
+    white:   '#a8a8a8'
 
   # Dim colors
   #
@@ -374,16 +374,16 @@ colors:
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
 
-#cursor:
+cursor:
   # Cursor style
-  #style:
+  style:
     # Cursor shape
     #
     # Values for `shape`:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    #shape: Block
+    shape: Beam
 
     # Cursor blinking state
     #
@@ -392,7 +392,7 @@ colors:
     #   - Off: Disable blinking by default
     #   - On: Enable blinking by default
     #   - Always: Force the cursor to always blink
-    #blinking: Off
+    blinking: on
 
   # Vi mode cursor style
   #
@@ -407,14 +407,14 @@ colors:
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
-  #unfocused_hollow: true
+  unfocused_hollow: true
 
   # Thickness of the cursor relative to the cell width as floating point number
   # from `0.0` to `1.0`.
-  #thickness: 0.15
+  thickness: 0.15
 
 # Live config reload (changes require restart)
-#live_config_reload: true
+live_config_reload: true
 
 # Shell
 #
