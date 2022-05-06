@@ -437,6 +437,25 @@ globalkeys = gears.table.join(
     function() awful.spawn.with_shell("playerctl next") end, {
         group = "",
         description = ""
+    }),
+
+    -- screenshot
+    awful.key({}, "Print",
+    function() awful.spawn.with_shell("maim ~/Pictures/Screenshots/$(date +%s).png") end, {
+        group = "",
+        description = ""
+    }),
+    
+    awful.key({ modkey }, "Print",
+    function() awful.spawn.with_shell("maim -B | xclip -selection clipboard -t image/png") end, {
+        group = "",
+        description = ""
+    }),
+    
+    awful.key({ modkey, "Shift" }, "Print",
+    function() awful.spawn.with_shell("maim -B -s | xclip -selection clipboard -t image/png") end, {
+        group = "",
+        description = ""
     })
 )
 
