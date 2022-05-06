@@ -224,6 +224,11 @@ globalkeys = gears.table.join(
     --     description = "go back"
     -- }),
 
+    awful.key({ modkey }, "l", function () awful.spawn.with_shell("light-locker-command -l") end, {
+        group = "",
+        description = "lock"
+    }),
+
     awful.key({ modkey, "Shift" }, ";", function () naughty.notify({ title = "Test Title", text = "Test Notification" }) end, {
         group = "awesome",
         description = "send test notification"
@@ -652,4 +657,5 @@ end)
 
 -- autostarts --
 awful.spawn.with_shell("picom --experimental-backend")
+awful.spawn.with_shell("light-locker")
 
