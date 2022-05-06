@@ -675,6 +675,7 @@ end)
 
 
 -- autostarts --
+awful.spawn.with_shell("setxkbmap -layout us,ir -option grp:alt_shift_toggle")
 awful.spawn.with_shell("picom --experimental-backend")
 awful.spawn.with_shell("light-locker")
 
