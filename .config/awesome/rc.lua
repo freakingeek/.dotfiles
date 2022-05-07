@@ -347,24 +347,28 @@ globalkeys = gears.table.join(
         description = "decrease the number of columns"
     }),
     
-    awful.key({ modkey }, "space", function () awful.layout.inc( 1) end, {
+    -- language
+    awful.key({ modkey }, "space", function () utils.toggle_language() end, {
         group = "layout",
         description = "select next"
     }),
     
-    awful.key({ modkey, "Shift" }, "space", function () awful.layout.inc(-1) end, {
+    awful.key({ "Mod1" }, "Shift", function () utils.toggle_language() end, {
         group = "layout",
-        description = "select previous"
+        description = "select next"
     }),
+    
+    -- awful.key({ modkey, "Shift" }, "space", function () awful.layout.inc(-1) end, {
+    --     group = "layout",
+    --     description = "select previous"
+    -- }),
 
     awful.key({ modkey, "Control" }, "n",
     function ()
         local c = awful.client.restore()
         -- Focus restored client
         if c then
-        c:emit_signal(
-            "request::activate", "key.unminimize", {raise = true}
-        )
+            c:emit_signal("request::activate", "key.unminimize", { raise = true })
         end
     end, {
         group = "client",
@@ -391,7 +395,11 @@ globalkeys = gears.table.join(
     }),
     
     -- Menubar
-    awful.key({ modkey, "Shift" }, "p", function() menubar.show() end, {
+    awful.key({ modkey, "Shift" }, "p", 
+    function()
+      -- menubar.show()
+      awful.spawn.with_shell("rofi -show drun")
+    end, {
         group = "launcher",
         description = "show the menubar"
     }),
@@ -539,59 +547,64 @@ for i = 1, 9 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
-                  function ()
-                        local screen = awful.screen.focused()
-                        local tag = screen.tags[i]
-                        if tag then
-                           tag:view_only()
-                        end
-                  end,
-                  {description = "view tag #"..i, group = "tag"}),
+        function ()
+            local screen = awful.screen.focused()
+            local tag = screen.tags[i]
+            if tag then tag:view_only() end
+        end, {
+            group = "tag",
+            description = "view tag #"..i
+        }),
+
         -- Toggle tag display.
         awful.key({ modkey, "Control" }, "#" .. i + 9,
-                  function ()
-                      local screen = awful.screen.focused()
-                      local tag = screen.tags[i]
-                      if tag then
-                         awful.tag.viewtoggle(tag)
-                      end
-                  end,
-                  {description = "toggle tag #" .. i, group = "tag"}),
+        function ()
+            local screen = awful.screen.focused()
+            local tag = screen.tags[i]
+            if tag then awful.tag.viewtoggle(tag) end
+        end, {
+            group = "tag",
+            description = "toggle tag #" .. i
+        }),
+
         -- Move client to tag.
         awful.key({ modkey, "Shift" }, "#" .. i + 9,
-                  function ()
-                      if client.focus then
-                          local tag = client.focus.screen.tags[i]
-                          if tag then
-                              client.focus:move_to_tag(tag)
-                          end
-                     end
-                  end,
-                  {description = "move focused client to tag #"..i, group = "tag"}),
+        function ()
+            if client.focus then
+                local tag = client.focus.screen.tags[i]
+                if tag then client.focus:move_to_tag(tag) end
+            end
+        end, {
+            group = "tag",
+            description = "move focused client to tag #" .. i
+        }),
+
         -- Toggle tag on focused client.
         awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
-                  function ()
-                      if client.focus then
-                          local tag = client.focus.screen.tags[i]
-                          if tag then
-                              client.focus:toggle_tag(tag)
-                          end
-                      end
-                  end,
-                  {description = "toggle focused client on tag #" .. i, group = "tag"})
+        function ()
+            if client.focus then
+                local tag = client.focus.screen.tags[i]
+                if tag then client.focus:toggle_tag(tag) end
+            end
+        end, {
+            group = "tag",
+            description = "toggle focused client on tag #" .. i
+        })
     )
 end
 
 clientbuttons = gears.table.join(
-    awful.button({ }, 1, function (c)
-        c:emit_signal("request::activate", "mouse_click", {raise = true})
+    awful.button({}, 1, function (c)
+        c:emit_signal("request::activate", "mouse_click", { raise = true })
     end),
+
     awful.button({ modkey }, 1, function (c)
-        c:emit_signal("request::activate", "mouse_click", {raise = true})
+        c:emit_signal("request::activate", "mouse_click", { raise = true })
         awful.mouse.client.move(c)
     end),
+
     awful.button({ modkey }, 3, function (c)
-        c:emit_signal("request::activate", "mouse_click", {raise = true})
+        c:emit_signal("request::activate", "mouse_click", { raise = true })
         awful.mouse.client.resize(c)
     end)
 )
@@ -604,15 +617,17 @@ root.keys(globalkeys)
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
     -- All clients will match this rule.
-    { rule = { },
-      properties = { border_width = beautiful.border_width,
-                     border_color = beautiful.border_normal,
-                     focus = awful.client.focus.filter,
-                     raise = true,
-                     keys = clientkeys,
-                     buttons = clientbuttons,
-                     screen = awful.screen.preferred,
-                     placement = awful.placement.no_overlap+awful.placement.no_offscreen
+    {
+      rule = {},
+      properties = {
+        border_width = beautiful.border_width,
+        border_color = beautiful.border_normal,
+        focus = awful.client.focus.filter,
+        raise = true,
+        keys = clientkeys,
+        buttons = clientbuttons,
+        screen = awful.screen.preferred,
+        placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
     },
 
@@ -675,7 +690,8 @@ end)
 
 
 -- autostarts --
-awful.spawn.with_shell("setxkbmap -layout us,ir -option grp:alt_shift_toggle")
+-- awful.spawn.with_shell("setxkbmap -layout us,ir -option grp:alt_shift_toggle")
 awful.spawn.with_shell("picom --experimental-backend")
 awful.spawn.with_shell("light-locker")
+awful.spawn.with_shell("nm-applet")
 
