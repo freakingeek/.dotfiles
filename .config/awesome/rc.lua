@@ -349,12 +349,12 @@ globalkeys = gears.table.join(
     
     -- language
     awful.key({ modkey }, "space", function () utils.toggle_language() end, {
-        group = "layout",
+        group = "language",
         description = "select next"
     }),
     
     awful.key({ "Mod1" }, "Shift", function () utils.toggle_language() end, {
-        group = "layout",
+        group = "language",
         description = "select next"
     }),
     
