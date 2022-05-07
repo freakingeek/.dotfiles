@@ -3,4 +3,4 @@ configuration {
  combi-modi: "window,drun,ssh";
  }
 
-@theme "themes/mine"
+@theme "themes/red_forest"
