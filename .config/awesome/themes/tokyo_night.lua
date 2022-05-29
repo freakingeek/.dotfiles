@@ -65,6 +65,6 @@ theme.volume_color_high = "#8a395b"
 theme.volume_color_muted = "#353d45"
 
 
-theme.wallpaper = "~/.config/awesome/themes/background.png"
+theme.wallpaper = "~/.local/share/backgrounds/tokyo_night.jpg"
 
 return theme
