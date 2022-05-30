@@ -46,11 +46,11 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-   x: 25
-   y: 25
+   x: 24
+   y: 24
 
   # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
+  dynamic_padding: true
 
   # Window decorations
   #
@@ -108,62 +108,62 @@ window:
   #multiplier: 3
 
 # Font configuration
-#font:
+font:
   # Normal (roman) font face
-  #normal:
+  normal:
     # Font family
     #
     # Default:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    #family: monospace
+    family: CascadiaCode Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    #style: Regular
+    style: Bold
 
   # Bold font face
-  #bold:
+  bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: CascadiaCode Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: Book
 
   # Italic font face
-  #italic:
+  italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: CascadiaCode Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    #style: Italic
+    style: Italic
 
   # Bold italic font face
-  #bold_italic:
+  bold_italic:
     # Font family
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: Iosevka Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
+    style: Bold Italic
 
   # Point size
-  #size: 11.0
+  size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
-  #offset:
-  #  x: 0
-  #  y: 0
+  offset:
+   x: 0
+   y: 1
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
@@ -179,14 +179,14 @@ window:
   #use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 # Colors (Catppuccin)
 colors:
   # Default colors
   primary:
-    background: '#11171d'
-    foreground: '#a8a8a8'
+    background: '0x181f21'
+    foreground: '0xdadada'
 
     # Bright and dim foreground colors
     #
@@ -204,8 +204,8 @@ colors:
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   cursor:
-   text: '#11171d'
-   cursor: '#a8a8a8'
+    text: '0xd6d6d6'
+    cursor: '0x3b4244'
 
   # Vi mode cursor colors
   #
@@ -274,25 +274,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#11171d'
-    red:     '#8c6983'
-    green:   '#828793'
-    yellow:  '#888293'
-    blue:    '#918795'
-    magenta: '#92a28e'
-    cyan:    '#7d8f8c'
-    white:   '#a8a8a8'
+    black:   '0x22292b'
+    red:     '0xe06e6e'
+    green:   '0x8ccf7e'
+    yellow:  '0xe5c76b'
+    blue:    '0x67b0e8'
+    magenta: '0xc47fd5'
+    cyan:    '0x6da4cd'
+    white:   '0xb3b9b8'
 
   # Bright colors
   bright:
-    black:   '#11171d'
-    red:     '#9f849b'
-    green:   '#8f7777'
-    yellow:  '#9894ad'
-    blue:    '#a79cad'
-    magenta: '#b294bb'
-    cyan:    '#8d869e'
-    white:   '#a8a8a8'
+    black:   '0x3b4244'
+    red:     '0xef7d7d'
+    green:   '0x9bdead'
+    yellow:  '0xf4d67a'
+    blue:    '0x6cb5ed'
+    magenta: '0xce89df'
+    cyan:    '0x67cbe7'
+    white:   '0xbdc3c2'
 
   # Dim colors
   #

@@ -16,16 +16,16 @@ theme.primary_dark         = "#0c1115"
 theme.secondary            = "#1d262d"
 theme.secondary_bright     = "#1f2931"
 
-theme.foreground           = "#a8a8a8"
-theme.foreground_dark      = "#575064"
-theme.foreground_bright    = "#ffffff"
+theme.foreground           = "#dadada"
+theme.foreground_dark      = "#bdc3c2"
+theme.foreground_bright    = "#b3b9b8"
 
-theme.red                  = "#8c6983"
-theme.green                = "#828793"
-theme.yellow               = "#888293"
-theme.blue                 = "#918795"
-theme.magenta              = "#92a28e"
-theme.cyan                 = "#7d8f8c"
+theme.red                  = "#e06e6e"
+theme.green                = "#8ccf7e"
+theme.yellow               = "#e5c76b"
+theme.blue                 = "#67b0e8"
+theme.magenta              = "#c47fd5"
+theme.cyan                 = "#6da4cd"
 
 theme.progress_bar_normal  = theme.blue
 theme.progress_bar_off     = theme.red
@@ -41,12 +41,12 @@ theme.fg_focus             = theme.foreground_bright
 theme.fg_urgent            = theme.foreground_bright
 theme.fg_minimize          = theme.foreground
 
-theme.useless_gap          = dpi(5)
-theme.gap_single_client    = false
+theme.useless_gap          = dpi(4)
+-- theme.gap_single_client    = false
 
-theme.border_width         = 0
-theme.border_normal        = theme.secondary
-theme.border_focus         = theme.secondary_bright
+theme.border_width         = dpi(2)
+theme.border_normal        = theme.foreground_dark
+theme.border_focus         = theme.foreground
 theme.border_marked        = theme.red
 
 theme.wibar_bg             = theme.bg_normal
@@ -65,6 +65,6 @@ theme.volume_color_high = "#8a395b"
 theme.volume_color_muted = "#353d45"
 
 
-theme.wallpaper = "~/.local/share/backgrounds/tokyo_night.jpg"
+theme.wallpaper = "~/.local/share/backgrounds/everblush.png"
 
 return theme
