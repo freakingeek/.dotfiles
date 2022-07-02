@@ -8,3 +8,6 @@ xmonad-x86_64-linux
 
 # Qtile
 __pycache__
+
+# Others
+.uuid
