@@ -49,6 +49,13 @@ bindsym Print                   --release   exec --no-startup-id maim ~/Pictures
 bindsym $mod+Print              --release   exec --no-startup-id maim -B | xclip -selection clipboard -t image/png
 bindsym $mod+shift+Print        --release   exec --no-startup-id maim -B -s | xclip -selection clipboard -t image/png
 
+## Scratchpad
+bindsym $mod+minus                          scratchpad show
+bindsym $mod+shift+minus                    move scratchpad
+
+# Toggle language layout
+bindsym $mod+space                          exec --no-startup-id ~/.dotfiles/scripts/toggle_language.sh
+
 # start a terminal
 # Default: i3-sensible-terminal
 bindsym $mod+Shift+Return 		    exec kitty
@@ -106,7 +113,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -230,11 +237,6 @@ exec_always --no-startup-id feh --bg-fill ~/.local/share/backgrounds/mountain.jp
 # Polkit
 exec_always --no-startup-id gnome-keyring-daemon --start
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
-# Language
-# TODO: try to work with win_space_toggle instead of alt_shift_toggle
-exec_always --no-startup-id "setxkbmap -layout us,ir -option grp:alt_shift_toggle"
-
 
 
 #
