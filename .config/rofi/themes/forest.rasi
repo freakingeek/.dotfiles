@@ -14,7 +14,7 @@
     separatorcolor:              rgba(168, 168, 168, 40%);
    
     // background:                  #161b2090;
-    background:                  #161b2050;
+    background:                  #161b2040;
     foreground:                  #d8dee9;
 
     urgent-background:           rgba(168, 168, 168, 40%);
@@ -36,12 +36,9 @@
 
 #window {
     border:                      1px;
-    width:                       100%;
-    height:                      100%;
-    padding:                     24% 20%;
-    // width:                       36%;
-    // height:                      32%;
-    // padding:                     16px;
+    width:                       36%;
+    height:                      32%;
+    padding:                     16px;
     border-color:                #5e81ac;
     background-color:            @background;
 }
