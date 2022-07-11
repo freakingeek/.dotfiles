@@ -13,8 +13,7 @@
     
     separatorcolor:              rgba(168, 168, 168, 40%);
    
-    // background:                  #161b2090;
-    background:                  #161b2040;
+    background:                  #161b2099;
     foreground:                  #d8dee9;
 
     urgent-background:           rgba(168, 168, 168, 40%);
