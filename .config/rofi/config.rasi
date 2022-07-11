@@ -1,6 +1,6 @@
 configuration {
  modi: "window,drun,ssh,combi";
  combi-modi: "window,drun,ssh";
- }
+}
 
-@theme "themes/red_forest"
+@theme "themes/forest"
