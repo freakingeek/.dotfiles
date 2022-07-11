@@ -240,8 +240,7 @@ exec_always --no-startup-id "setxkbmap -layout us,ir -option grp:alt_shift_toggl
 #
 ## Windows Behavior
 
-# for_window [class="Alacritty"] floating enable
-
+for_window [class="Nm-connection-editor"] floating enable
 
 
 
