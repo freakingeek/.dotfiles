@@ -209,12 +209,12 @@ gaps inner 16
 smart_gaps on
 
 # window theme
-client.focused          #d2d2d2 #d2d2d2 #d2d2d2 #32302f
-client.unfocused        #d2d2d2 #32302f #d2d2d2 #32302f
-client.focused_inactive #d2d2d2 #32302f #d2d2d2 #32302f
-client.placeholder      #d2d2d2 #32302f #d2d2d2 #32302f
-client.urgent           #d2d2d2 #d65d0e #d2d2d2 #d65d0e
-client.background       #1f1f1f
+client.focused          #5e81ac #5e81ac #5e81ac #161b20
+client.unfocused        #5e81ac #161b20 #5e81ac #161b20
+client.focused_inactive #5e81ac #161b20 #5e81ac #161b20
+client.placeholder      #5e81ac #161b20 #5e81ac #161b20
+client.urgent           #5e81ac #d65d0e #5e81ac #d65d0e
+client.background       #161b20
 
 
 #
@@ -230,8 +230,8 @@ workspace_auto_back_and_forth no
 #
 ## Startup
 
-exec_always --no-startup-id polybar --quiet
 exec_always --no-startup-id picom --experimental-backends
+exec_always --no-startup-id killall polybar && polybar --quiet
 exec_always --no-startup-id feh --bg-fill ~/.local/share/backgrounds/mountain.jpg
 
 # Polkit
