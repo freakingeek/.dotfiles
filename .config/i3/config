@@ -208,8 +208,8 @@ default_floating_border pixel 2
 gaps inner 6
 smart_gaps on
 
-# window theme
-client.focused          #5e81ac #5e81ac #5e81ac #161b20
+# window theme                  Border
+client.focused          #5e81ac #f9e2af #5e81ac #161b20
 client.unfocused        #5e81ac #161b20 #5e81ac #161b20
 client.focused_inactive #5e81ac #161b20 #5e81ac #161b20
 client.placeholder      #5e81ac #161b20 #5e81ac #161b20
