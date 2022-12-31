@@ -4,6 +4,7 @@
     
     red:                         #f38ba8;
     blue:                        #89b4fa;
+    yellow:                      #f9e2af;
     
     active-background:           @background;
     active-foreground:           @foreground;
@@ -19,8 +20,8 @@
     urgent-background:           rgba(168, 168, 168, 40%);
     urgent-foreground:           @foreground;
     
-    selected-normal-background:  #1e1e2e;
-    selected-normal-foreground:  @foreground;
+    selected-normal-background:  @yellow;
+    selected-normal-foreground:  @background;
     
     selected-active-foreground:  rgba (0, 142, 212, 100%);
     
@@ -38,7 +39,7 @@
     width:                       36%;
     height:                      33%;
     padding:                     16px;
-    border-color:                #f9e2af;
+    border-color:                @yellow;
     background-color:            @background;
 }
 
