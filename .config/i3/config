@@ -210,7 +210,7 @@ smart_gaps on
 
 # window theme                  Border
 client.focused          #5e81ac #f9e2af #5e81ac #161b20
-client.unfocused        #5e81ac #161b20 #5e81ac #161b20
+client.unfocused        #5e81ac #1e1e2e #5e81ac #161b20
 client.focused_inactive #5e81ac #161b20 #5e81ac #161b20
 client.placeholder      #5e81ac #161b20 #5e81ac #161b20
 client.urgent           #5e81ac #d65d0e #5e81ac #d65d0e
