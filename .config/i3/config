@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $editor "nvim"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -158,10 +159,16 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+
+# Edit the configuration file in favorite editor
+bindsym $mod+Control+x exec kitty $editor ~/.config/i3/config
+
 # reload the configuration file
 bindsym $mod+Control+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Control+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+q exec i3-msg exit
 
