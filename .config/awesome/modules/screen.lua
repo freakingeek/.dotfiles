@@ -35,21 +35,21 @@ awful.screen.connect_for_each_screen(function(screen)
             awful.button({}, 1, function(t) t:view_only() end),
 
             awful.button({ modkey }, 1,
-                function(t)
-                    if client.focus then
-                        client.focus:move_to_tag(t)
-                    end
-                end
+               function(t)
+                   if client.focus then
+                       client.focus:move_to_tag(t)
+                   end
+               end
             ),
 
-            awful.button({}, 3, awful.tag.viewtoggle),
+	    awful.button({}, 3, awful.tag.viewtoggle),
 
             awful.button({ modkey }, 3,
-                function(t)
-                    if client.focus then
-                        client.focus:toggle_tag(t)
-                    end
-                end
+               function(t)
+                   if client.focus then
+                       client.focus:toggle_tag(t)
+                   end
+               end
             ),
 
             awful.button({}, 4, function(t) awful.tag.viewnext(t.screen) end),
@@ -62,15 +62,15 @@ awful.screen.connect_for_each_screen(function(screen)
         screen  = screen,
         filter  = awful.widget.tasklist.filter.currenttags,
         buttons = gears.table.join(
-            awful.button({}, 1,
-                function(c)
-                    if c == client.focus then
-                        c.minimized = true
-                    else
-                        c:emit_signal("request::activate", "tasklist", { raise = true })
-                    end
-                end
-            ),
+            -- awful.button({}, 1,
+            --     function(c)
+            --         if c == client.focus then
+            --             c.minimized = true
+            --         else
+            --             c:emit_signal("request::activate", "tasklist", { raise = true })
+            --         end
+            --     end
+            -- ),
 
             awful.button({}, 3, function() awful.menu.client_list({ theme = { width = 250 } }) end),
 
