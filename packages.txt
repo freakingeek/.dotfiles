@@ -1,1 +1,1 @@
-playerctl maim vlc networkmanager networkmanager-openvpn network-manager-applet nemo udiskie noto-fonts-emoji xdg-user-dirs feh rofibase-devel lxappearance-gtk3 man-db nano xf86-video-intel vim unzip unrar archlinux-keyring gnome-keyring git kitty xclip
+playerctl maim vlc networkmanager networkmanager-openvpn network-manager-applet nemo udiskie noto-fonts-emoji xdg-user-dirs feh rofi base-devel lxappearance-gtk3 man-db nano xf86-video-intel vim unzip unrar archlinux-keyring gnome-keyring git kitty xclip
