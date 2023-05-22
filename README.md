@@ -1,2 +1,2 @@
-# My lovely .dotfiles :)
-arch linux + gnome 40 dotfiles
+# Dotfiles
+My personal linux config files
