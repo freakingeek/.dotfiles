@@ -1,4 +1,5 @@
 TERM = os.getenv("TERM") or "kitty"
+EDITOR = os.getenv("EDITOR") or "nvim"
 
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
