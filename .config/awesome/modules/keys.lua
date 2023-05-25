@@ -1,6 +1,7 @@
 local awful = require("awful")
 local gears = require("gears")
 
+local helpers = require("helpers")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
@@ -73,14 +74,9 @@ keys.globalkeys = gears.table.join(
         description = "select previous", group = "layout"
     }),
 
-    awful.key({ modkey }, "Tab",
-        function()
-            awful.client.focus.history.previous()
-            if client.focus then
-                client.focus:raise()
-            end
-        end,
-        { description = "go back", group = "client" }),
+    awful.key({ "Mod1" }, "Tab",helpers.focus_previous_window, {
+        description = "go back", group = "client"
+    }),
 
     -- Standard program
     awful.key({ modkey, "Shift" }, "Return", function() awful.spawn(TERM) end, {
@@ -116,16 +112,9 @@ keys.globalkeys = gears.table.join(
         description = "run prompt", group = "launcher"
     }),
 
-    awful.key({ modkey }, "x",
-        function()
-            awful.prompt.run {
-                prompt       = "Run Lua code: ",
-                textbox      = awful.screen.focused().mypromptbox.widget,
-                exe_callback = awful.util.eval,
-                history_path = awful.util.get_cache_dir() .. "/history_eval"
-            }
-        end,
-        { description = "lua execute prompt", group = "awesome" }),
+    awful.key({ modkey }, "x", helpers.run_lua_code, {
+        description = "lua execute prompt", group = "awesome"
+    }),
 
     -- Menubar
     awful.key({ modkey, "Shift" }, "p", function() menubar.show() end, {
