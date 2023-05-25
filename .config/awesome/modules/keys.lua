@@ -24,13 +24,13 @@ keys.globalkeys = gears.table.join(
         description = "quit awesome", group = "awesome"
     }),
 
-    -- awful.key({ modkey }, "Left", awful.tag.viewprev, {
-    --     description = "view previous", group = "tag"
-    -- }),
+    awful.key({ modkey, "Control" }, "Left", awful.tag.viewprev, {
+        description = "view previous", group = "tag"
+    }),
 
-    -- awful.key({ modkey }, "Right", awful.tag.viewnext, {
-    --     description = "view next", group = "tag"
-    -- }),
+    awful.key({ modkey, "Control" }, "Right", awful.tag.viewnext, {
+        description = "view next", group = "tag"
+    }),
 
     awful.key({ modkey }, "Escape", awful.tag.history.restore, {
         description = "go back", group = "tag"
@@ -63,6 +63,14 @@ keys.globalkeys = gears.table.join(
 
     awful.key({ modkey }, "u", awful.client.urgent.jumpto, {
         description = "jump to urgent client", group = "client"
+    }),
+
+    awful.key({ modkey, "Shift" }, "]", function () awful.layout.inc(1) end, {
+        description = "select next", group = "layout"
+    }),
+
+    awful.key({ modkey, "Shift" }, "[", function () awful.layout.inc(-1) end, {
+        description = "select previous", group = "layout"
     }),
 
     awful.key({ modkey }, "Tab",
@@ -102,14 +110,6 @@ keys.globalkeys = gears.table.join(
     awful.key({ modkey, "Control" }, "l", function() awful.tag.incncol(-1, nil, true) end, {
         description = "decrease the number of columns", group = "layout"
     }),
-
-    -- awful.key({ modkey }, "space", function () awful.layout.inc(1) end, {
-    --     description = "select next", group = "layout"
-    -- }),
-
-    -- awful.key({ modkey, "Shift" }, "space", function () awful.layout.inc(-1) end, {
-    --     description = "select previous", group = "layout"
-    -- }),
 
     -- Prompt
     awful.key({ modkey }, "r", function() awful.screen.focused().mypromptbox:run() end, {
