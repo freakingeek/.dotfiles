@@ -15,7 +15,7 @@ local keys = require("modules.keys")
 
 menubar.utils.terminal = TERM -- Some applications may require it
 
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme/init.lua")
 
 -- Keys
 root.keys(keys.globalkeys)
