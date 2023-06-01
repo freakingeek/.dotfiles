@@ -1,6 +1,7 @@
 configuration {
  modi: "window,drun,ssh,combi";
  combi-modi: "window,drun,ssh";
+ display-drun: "Applications:";
 }
 
-@theme "themes/forest"
+@theme "themes/gruvbox"
