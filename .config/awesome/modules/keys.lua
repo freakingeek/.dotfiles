@@ -117,7 +117,21 @@ keys.globalkeys = gears.table.join(
     }),
 
     -- Menubar
-    awful.key({ modkey, "Shift" }, "p", function() menubar.show() end, {
+    awful.key({ modkey, "Shift" }, "p", helpers.open_applications_menu, {
+        description = "show the menubar", group = "launcher"
+    }),
+
+    -- Power Menu
+    awful.key({ modkey, "Shift" }, "0", helpers.open_power_menu, {
+        description = "show the menubar", group = "launcher"
+    }),
+
+    -- Clipboard
+    awful.key({ modkey }, "v", helpers.open_clipboard_menu, {
+        description = "show the menubar", group = "launcher"
+    }),
+
+    awful.key({ modkey, "Shift" }, "v", helpers.open_clipboard_menu, {
         description = "show the menubar", group = "launcher"
     }),
 
