@@ -3,4 +3,4 @@ bluez bluez-utils playerctl maim vlc networkmanager networkmanager-openvpn netwo
 
 
 AUR:
-nvim-packer-git pfetch brave-bin
+nvim-packer-git pfetch brave-bin greenclip
