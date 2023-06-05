@@ -8,7 +8,7 @@ end
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-return packer.startup(function(use)
+packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'ellisonleao/gruvbox.nvim'
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -44,3 +44,5 @@ return packer.startup(function(use)
   }
 }
 end)
+
+return packer
