@@ -19,4 +19,16 @@ function helpers.run_lua_code()
     }
 end
 
+function helpers.open_applications_menu()
+    awful.spawn.with_shell("rofi -show drun")
+end
+
+function helpers.open_clipboard_menu()
+    awful.spawn.with_shell("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'")
+end
+
+function helpers.open_power_menu()
+    awful.spawn.with_shell("rofi -show powermenu -modi powermenu:~/.config/rofi/plugins/power-menu.sh")
+end
+
 return helpers

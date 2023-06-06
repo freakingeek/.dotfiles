@@ -1,0 +1,69 @@
+* {
+    background: #1d2021;
+    foreground: #ebdbb2;
+
+    black:   #3c3836;
+    red:     #cc241d;
+    green:   #98971a;
+    yellow:  #d79921;
+    blue:    #458588;
+    magenta: #b16286;
+    cyan:    #689d6a;
+    white:   #a89984;
+
+    /* Global Styles */
+    text-color: inherit;
+    background-color: transparent;
+}
+
+window {
+    width: 28%;
+    height: 33%;
+    border: 1px;
+    border-color: @black;
+    background-color: @background;
+}
+
+mainbox {
+    padding: 16px;
+}
+
+inputbar {
+    color: @foreground;
+    padding: 12px 8px;
+}
+
+entry {
+    padding: 0 0 0 8px;
+}
+
+listview {
+    // columns: 4;
+    // spacing: 32px 16px;
+    padding: 16px 0 0 0;
+}
+
+element {
+    padding: 12px 8px;
+    // orientation: vertical;
+    text-color: @foreground;
+}
+
+element-icon {
+    // size: 32px;
+}
+
+element-text {
+    // padding: 16px 0 0;
+    // horizontal-align: 0.5;
+}
+
+element selected {
+    // border-radius: 2px;
+    text-color: @background;
+    background-color: @foreground;
+}
+
+element, element-text, element-icon {
+  cursor: pointer;
+}
