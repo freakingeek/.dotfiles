@@ -1,5 +1,6 @@
 #!/bin/sh
 
 picom &
+polybar -q &
 greenclip daemon &
 setxkbmap -option grp:win_space_toggle "us,ir" -option grp_led:caps
