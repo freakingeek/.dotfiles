@@ -8,9 +8,11 @@ end
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-packer.startup(function(use)
+return packer.startup(function(use)
+  use 'wakatime/vim-wakatime'
   use 'wbthomason/packer.nvim'
-  use 'ellisonleao/gruvbox.nvim'
+  use 'sainnhe/gruvbox-material'
+  use 'norcalli/nvim-colorizer.lua'
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   
   use {
@@ -44,5 +46,3 @@ packer.startup(function(use)
   }
 }
 end)
-
-return packer
