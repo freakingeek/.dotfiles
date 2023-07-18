@@ -1,33 +1,36 @@
-vim.opt.guicursor = ""
+local opt = vim.opt
 
-vim.opt.nu = true
-vim.opt.rnu = true
+opt.guicursor = ""
 
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-vim.opt.expandtab = true
+opt.nu = true
+opt.rnu = true
 
-vim.opt.smartindent = true
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
+opt.expandtab = true
+opt.smartindent = true
 
-vim.opt.wrap = false
+opt.wrap = false
 
-vim.opt.swapfile = false
-vim.opt.backup = false
+opt.ignorecase = true
+opt.smartcase = true
 
-vim.opt.undodir = "/tmp/"
-vim.opt.undofile = true
+opt.swapfile = false
+opt.backup = false
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+opt.undodir = "/tmp/"
+opt.undofile = true
 
-vim.opt.termguicolors = true
+opt.hlsearch = false
+opt.incsearch = true
 
-vim.opt.scrolloff = 16
-vim.opt.signcolumn = "no"
-vim.opt.isfname:append("@-@")
+opt.termguicolors = true
 
-vim.opt.updatetime = 50
+opt.scrolloff = 16
+opt.signcolumn = "no"
+opt.isfname:append("@-@")
 
--- vim.opt.colorcolumn = "80"
+opt.updatetime = 50
 
+-- opt.colorcolumn = "80"
