@@ -23,3 +23,11 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 
 # Aliases
 alias vim="nvim"
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+# deno
+set --export DENO_INSTALL "/home/ysilavi/.deno"
+set --export PATH $DENO_INSTALL/bin $PATH
