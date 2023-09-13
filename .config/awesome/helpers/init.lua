@@ -31,4 +31,16 @@ function helpers.open_power_menu()
     awful.spawn.with_shell("rofi -show powermenu -modi powermenu:~/.config/rofi/plugins/power-menu.sh")
 end
 
+function helpers.raise_volume()
+    awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5%")
+end
+
+function helpers.lower_volume()
+    awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5%")
+end
+
+function helpers.toggle_mute()
+    awful.spawn.with_shell("pactl set-sink-mute @DEFAULT_SINK@ toggle")
+end
+
 return helpers

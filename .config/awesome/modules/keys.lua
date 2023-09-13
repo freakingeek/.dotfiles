@@ -136,18 +136,15 @@ keys.globalkeys = gears.table.join(
     }),
 
     -- XF86 Keys
-    awful.key({}, "XF86AudioRaiseVolume",
-        function() awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5%") end, {
+    awful.key({}, "XF86AudioRaiseVolume", helpers.raise_volume, {
         description = "", group = "",
     }),
 
-    awful.key({}, "XF86AudioLowerVolume",
-        function() awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5%") end, {
+    awful.key({}, "XF86AudioLowerVolume", helpers.lower_volume, {
         description = "", group = "",
     }),
 
-    awful.key({}, "XF86AudioMute",
-        function() awful.spawn.with_shell("pactl set-sink-mute @DEFAULT_SINK@ toggle") end, {
+    awful.key({}, "XF86AudioMute", helpers.toggle_mute, {
         description = "", group = "",
     }),
 
