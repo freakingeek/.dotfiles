@@ -21,5 +21,16 @@ end
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
 
+# Set deno
+set -gx DENO_INSTALL "$HOME/.deno"
+set -gx PATH "$DENO_INSTALL/bin" $PATH
+
+#
+set -gx PATH "$HOME/.local/bin" $PATH
+
 # Aliases
 alias vim="nvim"
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
