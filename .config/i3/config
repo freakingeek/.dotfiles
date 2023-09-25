@@ -50,6 +50,10 @@ bindsym Print                   --release   exec --no-startup-id maim ~/Pictures
 bindsym $mod+Print              --release   exec --no-startup-id maim -B | xclip -selection clipboard -t image/png
 bindsym $mod+shift+Print        --release   exec --no-startup-id maim -B -s | xclip -selection clipboard -t image/png
 
+# Clipboard
+# bindsym $mod+v 		                    exec "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
+bindsym $mod+Shift+v 			    exec "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
+
 ## Scratchpad
 bindsym $mod+minus                          scratchpad show
 bindsym $mod+shift+minus                    move scratchpad
@@ -239,6 +243,7 @@ workspace_auto_back_and_forth no
 ## Startup
 
 exec --no-startup-id polybar --quiet
+exec --no-startup-id greenclip daemon
 exec_always --no-startup-id picom --experimental-backends
 exec_always --no-startup-id feh --bg-fill ~/.local/share/backgrounds/dark-cat.png
 
