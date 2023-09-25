@@ -56,6 +56,11 @@ awful.rules.rules = {
         properties = { floating = true }
     },
 
+    {
+      rule = { class = "Polybar" },
+      properties = { focusable = false, border_width = 0 }
+    },
+
     -- Add titlebars to normal clients and dialogs
     {
         rule_any = { type = { "normal", "dialog" }

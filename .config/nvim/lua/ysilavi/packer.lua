@@ -9,8 +9,10 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 return packer.startup(function(use)
+  use 'mattn/emmet-vim'
   use 'wakatime/vim-wakatime'
   use 'wbthomason/packer.nvim'
+  use 'akinsho/toggleterm.nvim'
   use 'sainnhe/gruvbox-material'
   use 'norcalli/nvim-colorizer.lua'
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
