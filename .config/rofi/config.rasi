@@ -4,4 +4,4 @@ configuration {
  display-drun: "Applications:";
 }
 
-@theme "themes/gruvbox"
+@theme "themes/catppuccin"

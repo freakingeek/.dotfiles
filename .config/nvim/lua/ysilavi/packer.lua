@@ -48,3 +48,5 @@ return packer.startup(function(use)
   }
 }
 end)
+
+return packer
